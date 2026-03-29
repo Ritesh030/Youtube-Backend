@@ -98,10 +98,22 @@ userSchema.methods.generateAccessToken = function () {
             },
             ACCESS_TOKEN_SECRET,
             {
-                  expiresIn: ACCESS_TOKEN_EXPIRY
+                  expiresIn: ACCESS_TOKEN_EXPIRY,
+                  // algorithm: "HS512"
+                  // header: {
+                  //       typ: "JWT",
+                  //       kid: "auth-key-1"
+                  // }
             }
       )
 }
+
+// token -- header+payload(data and created and exprireIn)+signature
+
+// signature = HMAC_SHA256(
+//    base64(header) + "." + base64(payload),
+//    secret_key
+// )
 
 userSchema.methods.generateRefreshToken = function () {
       return jwt.sign(

@@ -3,7 +3,7 @@ import fs from 'fs'
 import { CLOUDINARY_API_KEY } from "../constants.js"
 import { CLOUDINARY_CLOUD_NAME } from "../constants.js"
 import { CLOUDINARY_API_SECRET } from "../constants.js"
-import { apiError } from './apiErrors.js';
+import { apiError } from './apiErrors.js'
 
 cloudinary.config({
       cloud_name: CLOUDINARY_CLOUD_NAME,
@@ -39,7 +39,7 @@ const deleteFromCloudinary = async (publicId) => {
   if (!publicId) return;
 
   try {
-    await cloudinary.uploader.destroy(publicId, { invalidate: true });
+    await cloudinary.uploader.destroy(publicId, { invalidate: true }); // invalidate: true -- > Purge this asset from all CDN caches right now.
   } catch (err) {
     console.error("Cloudinary deletion failed:", err.message);
   }

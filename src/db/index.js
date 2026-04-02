@@ -24,7 +24,7 @@ export default connectDB;
 // const connectDB = async () => {
 //   try {
 //     const connection = await mongoose.connect(
-//       `mongodb+srv://Ritesh:Rohit1234@ritesh.mtblr1d.mongodb.net`
+//       `url`
 //     );
 //     console.log("MongoDB connected:", connection.connection.host);
 //   } catch (error) {

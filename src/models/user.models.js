@@ -68,7 +68,6 @@ const userSchema = new Schema(
       }, { timestamps: true }
 )
 
-
 // Run this middleware BEFORE saving a user document to the database
 // we cannot use arrow function here because arrow fuction does not have reference to (this) keyword
 userSchema.pre("save", async function () {

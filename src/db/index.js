@@ -6,7 +6,6 @@ import { MONGODB_URL } from "../constants.js"
 //load environment variables from .env file
 // console.log("Mongo URL:", "mongodb+srv://Ritesh:Rohit1234@ritesh.mtblr1d.mongodb.net");
 
-
 const connectDB = async () => {
   try {
     await mongoose.connect(MONGODB_URL);
@@ -18,8 +17,6 @@ const connectDB = async () => {
 }
 
 export default connectDB;
-
-
 
 // const connectDB = async () => {
 //   try {
